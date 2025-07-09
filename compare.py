@@ -4,7 +4,6 @@ def parse_pairs(file_path):
     pairs = set()
     with open(file_path, 'r') as f:
         for line in f:
-            # Extract ticker symbols (2–5 uppercase letters)
             tickers = re.findall(r'\b[A-Z]{2,5}\b', line)
             if len(tickers) >= 2:
                 pairs.add((tickers[0], tickers[1]))
