@@ -1,0 +1,7 @@
+These pairs are common between both files and also have an ADF value of <0.001
+
+Ticker 1 Ticker 2  Cointegrated  ADF p-value  EHedge Ratio  Trace Stat  Critical Value  JHedge Ratio
+     LLY     AMGN          True      0.00014        6.0467     18.8727         15.4943        0.1460
+     BDX      HUM          True      0.00032        0.1077     18.1887         15.4943        6.3013
+    TEVA      HUM          True      0.00042       -0.0337     17.5524         15.4943      -22.4300
+

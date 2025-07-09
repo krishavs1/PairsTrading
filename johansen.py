@@ -64,10 +64,10 @@ for t1, t2 in combinations(tickers, 2):
 df_results = pd.DataFrame(results)
 
 if df_results.empty:
-    print("\n❌ No valid results. Check your tickers or data.")
+    print("\n no valid results")
 else:
-    print("\n✅ Cointegration Results:")
+    print("\ncointegration Results")
     print(df_results.sort_values("Trace Stat", ascending=False))
 
-    print("\n📌 Top Cointegrated Pairs:")
+    print("\nbest Cointegrated Pairs:")
     print(df_results[df_results["Cointegrated"] == True].sort_values("Trace Stat", ascending=False))

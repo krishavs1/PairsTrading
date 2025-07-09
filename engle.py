@@ -23,14 +23,11 @@ def download_prices(t1, t2, start, end):
     data = yf.download([t1, t2], start=start, end=end,
                        auto_adjust=True, progress=False, group_by='ticker')
 
-    # Try group_by='ticker' format first
     try:
         y = data[t1]["Close"].dropna()
         x = data[t2]["Close"].dropna()
     except Exception:
-        # Fallback to default multiindex: level 0=field, level1=ticker
         try:
-            # xs on level 0 for 'Close'
             close_df = data.xs('Close', axis=1, level=0).dropna()
             y = close_df[t1]
             x = close_df[t2]
@@ -56,7 +53,7 @@ def engle_granger_test(y, x, adf_alpha=ADF_ALPHA):
     return pvalue < adf_alpha, pvalue, hedge_ratio
 
 
-# Collect results for each pair
+# results for each pair
 results = []
 for t1, t2 in combinations(tickers, 2):
     y, x = download_prices(t1, t2, START_DATE, END_DATE)
@@ -80,8 +77,8 @@ for t1, t2 in combinations(tickers, 2):
 cf = pd.DataFrame(results)
 
 if cf.empty:
-    print("No pairs passed the Engle-Granger test. Check data or parameters.")
+    print("No pairs passed")
 else:
-    print("\n📌 Top Cointegrated Pairs (ADF):")
+    print("\nTop Cointegrated Pairs (based on ADF):")
     top = cf[cf["Cointegrated"]].sort_values("ADF p-value")
     print(top.to_string(index=False))
