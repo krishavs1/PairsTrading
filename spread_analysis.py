@@ -5,8 +5,8 @@ from datetime import datetime
 import numpy as np
 
 # ------------ CONFIG ------------
-T1 = "TEVA"                                 
-T2 = "HUM"
+T1 = "LLY"                                 
+T2 = "AMGN"
 START_DATE = "2024-01-01"                   
 END_DATE = datetime.today().strftime("%Y-%m-%d")
 
