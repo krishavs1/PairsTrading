@@ -1,0 +1,6 @@
+Common Spread Metrics (pairs common to both Engle–Granger and Johansen, ADF < 0.001)
+
+Ticker 1 Ticker 2  Hedge Ratio  Spread Mean  Spread Vol  Half-Life (d)
+     LLY     AMGN      2.1565    176.1409      64.939         13.0
+     BDX      HUM      0.2035    159.47        17.2461        39.8   
+    TEVA      HUM     -0.0219    23.0051       2.1649         27.5  
